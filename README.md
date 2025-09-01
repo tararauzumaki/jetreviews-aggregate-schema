@@ -1,4 +1,4 @@
-# JetReview Aggregate Schema
+# JetReviews Aggregate Schema
 
 A WordPress plugin that generates aggregate review schema markup using data from JetReviews, specifically designed for anime database sites with 1-100% rating scale.
 
