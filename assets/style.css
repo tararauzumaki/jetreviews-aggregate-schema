@@ -1,0 +1,423 @@
+/* JetReview Aggregate Schema Styles */
+
+/* Basic aggregate rating display */
+.jra-aggregate-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.jra-rating {
+    font-weight: bold;
+    color: #ff6b35;
+    font-size: 16px;
+}
+
+.jra-count {
+    color: #888;
+}
+
+.jra-separator {
+    color: #ccc;
+}
+
+/* Star ratings */
+.jra-stars {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.jra-stars .star {
+    font-size: 16px;
+    color: #ffc107;
+}
+
+.jra-stars .star.empty {
+    color: #e0e0e0;
+}
+
+/* Widget styles */
+.jra-widget-rating {
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.widget .jra-widget-rating {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .jra-aggregate-rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .jra-separator {
+        display: none;
+    }
+}
+
+/* Admin styles */
+.jra-admin-rating-preview {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.jra-admin-rating-preview h4 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+/* Schema testing styles */
+.jra-schema-testing {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.jra-schema-testing h3 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.jra-schema-testing .button {
+    margin-right: 10px;
+}
+
+/* Rating bars/progress */
+.jra-rating-bar {
+    background: #e0e0e0;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    display: inline-block;
+    width: 100px;
+    vertical-align: middle;
+    margin: 0 8px;
+}
+
+.jra-rating-fill {
+    background: linear-gradient(90deg, #ff4444 0%, #ffaa00 50%, #00aa00 100%);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+/* Anime-specific enhancements */
+.anime-rating-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #ff6b35;
+}
+
+.anime-rating-score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6b35;
+    min-width: 60px;
+}
+
+.anime-rating-details {
+    flex: 1;
+}
+
+.anime-rating-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.anime-rating-count {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Schema status indicator */
+.jra-schema-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.jra-schema-status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.jra-schema-status.inactive {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.jra-schema-status::before {
+    content: "●";
+    font-size: 8px;
+}
+
+/* Tooltip styles for admin */
+.jra-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.jra-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.jra-tooltip:hover::after {
+    opacity: 1;
+}
+
+/* Admin settings page enhancements */
+.jra-settings-section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.jra-settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.jra-preview-box {
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Loading states */
+.jra-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.jra-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: jra-spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes jra-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .jra-aggregate-rating {
+        color: #ccc;
+    }
+    
+    .jra-count {
+        color: #999;
+    }
+    
+    .anime-rating-container {
+        background: #2d2d2d;
+        color: #ccc;
+    }
+    
+    .jra-preview-box {
+        background: #1e1e1e;
+        color: #ccc;
+        border-color: #444;
+    }
+}
+
+/* Enhanced Admin Styling */
+.jra-settings-section {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.jra-settings-section h2 {
+    margin-top: 0;
+    color: #1d2327;
+    font-size: 1.3em;
+}
+
+.jra-settings-section h3 {
+    color: #1d2327;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.jra-settings-section ul {
+    margin-left: 20px;
+}
+
+.jra-settings-section li {
+    margin-bottom: 5px;
+}
+
+/* Post type mappings table styling */
+.jra-settings-section table.widefat {
+    margin-bottom: 15px;
+}
+
+.jra-settings-section table.widefat th {
+    background: #f6f7f7;
+    font-weight: 600;
+}
+
+.jra-settings-section table.widefat td {
+    vertical-align: top;
+    padding: 12px;
+}
+
+.jra-settings-section table.widefat select {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Integration mode styling */
+.jra-integration-mode {
+    background: #f0f6fc;
+    border: 1px solid #c3c4c7;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.jra-integration-mode h4 {
+    margin-top: 0;
+    color: #0073aa;
+    font-size: 1.1em;
+}
+
+/* Recommendation boxes */
+.jra-recommendation {
+    background: #f9f9f9;
+    border-left: 4px solid #0073aa;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+.jra-recommendation strong {
+    color: #0073aa;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Debug section styling */
+.jra-debug-section {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.jra-debug-section h3 {
+    color: #856404;
+    margin-top: 0;
+}
+
+/* Schema preview styling */
+.jra-schema-preview {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Form field groups */
+.jra-field-group {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jra-field-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.jra-field-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.jra-field-group .description {
+    margin-top: 5px;
+    font-style: italic;
+    color: #646970;
+}
+
+/* Status indicators */
+.jra-status-good {
+    color: #00a32a;
+    font-weight: 600;
+}
+
+.jra-status-error {
+    color: #d63638;
+    font-weight: 600;
+}
+
+.jra-status-warning {
+    color: #dba617;
+    font-weight: 600;
+}
